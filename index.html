@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+<meta name="viewport" content="width=device-width">
+
+
+<link href="css/demo.css" rel="stylesheet" type="text/css">
+<link rel="stylesheet" type="text/css" href="slick/slick.css"/>
+<link rel="stylesheet" type="text/css" href="slick/slick-theme.css"/>
+
+<script type="text/javascript" src="js/jquery.min.js"></script>
+<script	type="text/javascript" src="js/lockednav.js"></script>
+<script type="text/javascript" src="slick/slick.min.js"></script>
+<script type="text/javascript">
+
+$(document).ready( function() {
+    $('.lockedNav').onePageNav();
+
+    $('.subNavBtn').on('click', function(e) {
+		var link = $(e.currentTarget);
+		var newLoc = '#' + link.attr('href').split('#')[1];
+
+        e.preventDefault();
+        var offset = $(newLoc).offset().top;
+
+        $('html, body').animate({
+            scrollTop: offset
+        }, 750, 'swing');
+    });
+
+    $('.photoSlider').slick({
+        slide: 'li',
+        arrows: false,
+        dots: true,
+        infinite: true,
+        centerMode: true,
+        speed: 500,
+        fade: true,
+        cssEase: 'linear',
+        autoplay: true,
+        autoplaySpeed: 3000
+    });
+});
+
+</script>
+
+</head>
+<body>
+
+<div class="lockedNav">
+    <a href="#ceremony" class="lockedNavBtn">CEREMONY</a>
+    <a href="#accommodations" class="lockedNavBtn">ACCOMMODATIONS</a>
+    <a href="#bridalparty" class="lockedNavBtn">BRIDAL PARTY</a>
+    <a href="#registry" class="lockedNavBtn">REGISTRY</a>
+</div>
+
+
+<div class="wrap ">
+	<div class="section sTop">
+        <div class="photoSlider">
+            <div class="subMenu" >
+                <div class="inner">
+                    <a href="#ceremony" class="subNavBtn">CEREMONY</a>
+                    <a href="#accommodations" class="subNavBtn">ACCOMMODATIONS</a>
+                    <a href="#" class="subNavMain">Beth & Jeff</a>
+                    <a href="#bridalparty" class="subNavBtn">BRIDAL PARTY</a>
+                    <a href="#registry" class="subNavBtn">REGISTRY</a>
+                </div>
+            </div>
+            <li><img src="img/cruise.png"/></li>  
+            <li><img src="img/party.png"/></li>
+            <li><img src="img/circles.png"/></li>
+            <li><img src="img/flyers.png"/></li>
+            <li><img src="img/hershey.png"/></li>
+        </div>
+	</div>
+
+	<div id="ceremony" class="section">
+		<div class="inner ">
+			<h1>Ceremony</h1>
+            <p>Our ceremony will take place at the beautiful Joseph Ambler Inn</p>
+            <p><b>5:00 PM</b></p>
+            <p>Joseph Ambler Inn</p>
+            <p>1005 Horsham Road</p>
+            <p>North Wales, PA 19454</p>
+            <a href="https://www.google.com/maps/place/Joseph+Ambler+Inn/@40.2383743,-75.229704,17z/data=!4m15!1m9!4m8!1m0!1m6!1m2!1s0x89c6a4177d39cd4b:0x34a00137a47c144b!2sJoseph+Ambler+Inn,+1005+Horsham+Rd,+North+Wales,+PA+19454!2m2!1d-75.22751!2d40.2383702!3m4!1s0x89c6a4177d39cd4b:0x34a00137a47c144b!8m2!3d40.2383702!4d-75.22751">View map</a>
+            <p>Reception to immediately follow</p>
+		</div>
+	</div>
+
+	<div id="accommodations" class="section">
+		<div class="inner">
+			<h1>Accommodations</h1>
+            <p>A block of rooms has been made available at the Joseph Ambler Inn</p>
+            <p>Do something to reserve one</p>
+		</div>
+	</div>
+
+    <div id="bridalparty" class="section">
+        <div class="inner">
+            <h1>Bridal Party</h1>
+        </div>
+    </div>
+
+	<div id="registry" class="section">
+		<div class="inner">
+			<h1>Registry</h1>
+            <p>We are registered at the following places:</p>
+            <div class="reg-links">
+                <a href="https://www.bedbathandbeyond.com:443/store/giftregistry/view_registry_guest.jsp?registryId=544023206&eventType=Wedding&pwsurl="><img src="img/bbb-logo.png"/></a>
+                <a href="https://www.macys.com/wgl/registry/guest/6694380"><img src="img/macys-logo.png"/></a>
+                <a href="https://www.wanderable.com/hm/BethandJeff102217"><img src="img/wanderable-logo.png"/></a>
+            </div>
+		</div>
+	</div>
+</div>
+
+</body>
+</html>
